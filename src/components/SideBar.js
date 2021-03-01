@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Search from './Search'
 
 function SideBar() {
     return (
         <div className="side">
-            <h3>Sidebar</h3>
+            <Search />
         </div>
     )
 }

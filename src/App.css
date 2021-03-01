@@ -11,7 +11,20 @@
 }
 .side{
   flex:.25;
+  background-color: #1e213a;
 }
 .detail{
   flex:.75;
+  background-color:#100e1d
+}
+
+.side .search .top{
+  display:flex;
+  justify-content:space-between;
+  margin-top: 30px;
+  padding: 35px;
+}
+
+.search .top > button{
+  padding:10px 20px;
 }
