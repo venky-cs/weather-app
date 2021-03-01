@@ -18,13 +18,13 @@
   background-color:#100e1d
 }
 
-.side .search .top{
+.side .top{
   display:flex;
   justify-content:space-between;
   margin-top: 30px;
   padding: 35px;
 }
 
-.search .top > button{
+.side .top > button{
   padding:10px 20px;
 }
