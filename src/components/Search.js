@@ -10,11 +10,15 @@ function Search() {
             <button onClick={() => setSearch((prevState) => !prevState)}>
               Search for places
             </button>
-            <button>&#9728;</button>
+            <button>
+              <span class="material-icons">gps_fixed</span>
+            </button>
           </div>
         ) : (
           <div className="searchbar">
-            <button onClick={() => setSearch((prevState) => !prevState)}>X</button>
+            <button onClick={() => setSearch((prevState) => !prevState)}>
+              X
+            </button>
             <div className="top">
               <input type="text" name="" placeholder="search location" />
               <button>Search</button>
