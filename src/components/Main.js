@@ -1,11 +1,23 @@
 import React,{useState,useEffect} from 'react'
 import SideBar from './SideBar';
-import DetailBar from './DetailBar'
+import DetailBar from './DetailBar';
+
+import axios from 'axios';
 
 function Main() {
     const [state, setState] = useState('');
-    // useEffect(() => {
-    // }, [state])
+    useEffect(() => {
+        console.log(state)
+        if(state.length > 1){
+            axios
+            .get(
+                ` https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${state}`
+                )
+          .then((response) => console.log(response.data));
+        }else{
+            console.log('empty state')
+        }
+        }, [state])
     return (
         <div className="main">
             <SideBar result={getLocation}/>
