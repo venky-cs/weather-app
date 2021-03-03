@@ -5,6 +5,7 @@ import DetailBar from "./DetailBar";
 import axios from "axios";
 
 let city = 28743736;
+let cors = "";
 function Main() {
   const [state, setState] = useState("");
   const [woeid, setWoeid] = useState(city);
@@ -14,7 +15,7 @@ function Main() {
     if (state.length > 1) {
       axios
         .get(
-          ` https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${state}`
+          ` ${cors}https://www.metaweather.com/api/location/search/?query=${state}`
         )
         .then((response) => setWoeid(response.data[0].woeid));
       console.log("woeid", woeid);
@@ -25,9 +26,7 @@ function Main() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`
-      )
+      .get(`${cors}https://www.metaweather.com/api/location/${woeid}`)
       .then((response) => setData(response.data.consolidated_weather));
     console.log("data", data);
   }, [woeid]);
