@@ -5,7 +5,7 @@ import DetailBar from "./DetailBar";
 import axios from "axios";
 
 let city = 28743736;
-let cors = "";
+let cors = "https://cors-anywhere-venky.herokuapp.com/";
 function Main() {
   const [state, setState] = useState("");
   const [woeid, setWoeid] = useState(city);
