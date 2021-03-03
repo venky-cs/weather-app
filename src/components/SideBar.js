@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function SideBar({ result, datas, name }) {
+function SideBar({ result, datas }) {
   const [search, setSearch] = useState(true);
   const [value, setValue] = useState("");
   const [location, setLocation] = useState("");
@@ -11,7 +11,11 @@ function SideBar({ result, datas, name }) {
     } else {
       console.log(location);
     }
-  }, [location]);
+  }, [location, datas]);
+
+  let day = datas.consolidated_weather;
+  let info = datas;
+
   return (
     <div className="side">
       <div className="search">
@@ -25,15 +29,18 @@ function SideBar({ result, datas, name }) {
                 <span class="material-icons">gps_fixed</span>
               </button>
             </div>
-            {datas.length > 1 && (
+            {day > 1 && (
               <div>
-                <img src="" alt="weather-icon" />
+                <img
+                  src={`/icons/${day[0].weather_state_name}.png`}
+                  alt={day[0].weather_state_name}
+                />
                 <h3>
-                  {} <sub>.C</sub>{" "}
+                  <sup>{Math.floor(day[0].the_temp)} </sup> .C{" "}
                 </h3>
-                <h5>{datas[0].weather_state_name}</h5>
-                <p>Today .{}</p>
-                <p>{name}</p>
+                <h5>{day[0].weather_state_name}</h5>
+                <p>Today .{day[0].applicable_date}</p>
+                <p>{info.title}</p>
               </div>
             )}
           </>
@@ -51,6 +58,7 @@ function SideBar({ result, datas, name }) {
               <button
                 onClick={() => {
                   setLocation(value);
+                  setSearch((prevState) => !prevState);
                 }}
               >
                 Search

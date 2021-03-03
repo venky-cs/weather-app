@@ -22,12 +22,12 @@ function Main() {
     } else {
       console.log("empty state");
     }
-  }, [state]);
+  }, [state,data]);
 
   useEffect(() => {
     axios
       .get(`${cors}https://www.metaweather.com/api/location/${woeid}`)
-      .then((response) => setData(response.data.consolidated_weather));
+      .then((response) => setData(response.data));
     console.log("data", data);
   }, [woeid]);
 
