@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import SideBar from "./SideBar";
 import DetailBar from "./DetailBar";
 
@@ -8,6 +8,7 @@ let city = 28743736;
 function Main() {
   const [state, setState] = useState("");
   const [woeid, setWoeid] = useState(city);
+  const [data, setData] = useState([]);
   useEffect(() => {
     console.log(state);
     if (state.length > 1) {
@@ -15,15 +16,26 @@ function Main() {
         .get(
           ` https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${state}`
         )
-        .then((response) => console.log(response.data));
+        .then((response) => setWoeid(response.data[0].woeid));
+      console.log("woeid", woeid);
     } else {
       console.log("empty state");
     }
   }, [state]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`
+      )
+      .then((response) => setData(response.data.consolidated_weather));
+    console.log("data", data);
+  }, [woeid]);
+
   return (
     <div className="main">
-      <SideBar result={getLocation} />
-      <DetailBar value={state} />
+      <SideBar result={getLocation} datas={data} name={state} />
+      <DetailBar />
     </div>
   );
 

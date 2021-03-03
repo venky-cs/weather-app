@@ -1,10 +1,9 @@
 import React from 'react'
 
-function DetailBar({value}) {
+function DetailBar() {
     return (
         <div className="detail">
             DetailBar
-            <h5>{value}</h5>
         </div>
     )
 }
