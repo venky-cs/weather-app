@@ -16,6 +16,17 @@ function SideBar({ result, datas }) {
   let day = datas.consolidated_weather;
   let info = datas;
 
+  const setWeatherImg = () => {
+    const weatherName = day[0].weather_state_name.replace(/ +/g, "");
+    return weatherName;
+  };
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const splitDate = date.toString().split(" ");
+    return `${splitDate[0]}, ${splitDate[2]} ${splitDate[1]}`;
+  };
+
   return (
     <div className="side">
       <div className="search">
@@ -32,14 +43,14 @@ function SideBar({ result, datas }) {
             {day && day.length > 1 && (
               <div>
                 <img
-                  src={`/icons/${day[0].weather_state_name}.png`}
+                  src={`/icons/${setWeatherImg()}.png`}
                   alt={day[0].weather_state_name}
                 />
                 <h3>
                   <sup>{Math.floor(day[0].the_temp)} </sup> .C{" "}
                 </h3>
                 <h5>{day[0].weather_state_name}</h5>
-                <p>Today .{day[0].applicable_date}</p>
+                <p>Today .{formatDate(day[0].applicable_date)}</p>
                 <p>{info.title}</p>
               </div>
             )}
