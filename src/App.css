@@ -1,44 +1,58 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.main{
-  display:flex;
+.main {
+  display: flex;
   width: 100vw;
-  height:100vh;
+  height: 100vh;
 }
-.side{
-  flex:.25;
+.side {
+  flex: 0.25;
   background-color: #1e213a;
 }
-.detail{
-  flex:.75;
-  background-color:#100e1d
+.detail {
+  flex: 0.75;
+  background-color: #100e1d;
 }
 
-.side .top{
-  display:flex;
-  justify-content:space-between;
+.side .top {
+  display: flex;
+  justify-content: space-between;
   margin-top: 30px;
   padding: 35px;
 }
 
-.side .top > button{
-  padding:10px 20px;
+.side .top > button {
+  padding: 10px 20px;
 }
 
-.detail .top{
-  display:flex;
+.detail .top {
+  display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.detail .top .card{
+.detail .top .card {
   margin: 30px auto;
   color: white;
   background-color: #1e213a;
 }
-p >span{
-  padding-left:10px;
+p > span {
+  padding-left: 10px;
+}
+
+.detail .middle .card .row {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+.detail .middle h3 {
+  color: white;
+}
+.middle .card .row > div {
+  width: 328px;
+  background: #1e213a;
+  color: white;
 }
