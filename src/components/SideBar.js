@@ -29,7 +29,7 @@ function SideBar({ result, datas }) {
                 <span class="material-icons">gps_fixed</span>
               </button>
             </div>
-            {day > 1 && (
+            {day && day.length > 1 && (
               <div>
                 <img
                   src={`/icons/${day[0].weather_state_name}.png`}
