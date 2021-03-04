@@ -34,7 +34,7 @@ function Main() {
   return (
     <div className="main">
       <SideBar result={getLocation} datas={data} name={state} />
-      <DetailBar />
+      <DetailBar datas={data} />
     </div>
   );
 
