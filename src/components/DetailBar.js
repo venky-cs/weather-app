@@ -8,9 +8,7 @@ function DetailBar({ datas }) {
 
   useEffect(() => {
     if (day) {
-      let dayFilt = day.filter((data) =>
-        data.applicable_date !== todayDate
-      );
+      let dayFilt = day.filter((data) => data.applicable_date !== todayDate);
       setInfo(dayFilt);
     } else console.log("no data");
   }, [day]);
@@ -20,7 +18,16 @@ function DetailBar({ datas }) {
   return (
     <div className="detail">
       <div className="top">
-        <div className="card"></div>
+        {info.map((data) => {
+            return <div className="card">
+            <p>{data.applicable_date}</p>
+            <img src={data.weather_state_name} alt={data.weather_state_name} />
+            <p>
+              <span>{Math.floor(data.max_temp)}</span>
+              <span>{Math.floor(data.min_temp)}</span>
+            </p>
+          </div>;
+        })}
       </div>
     </div>
   );

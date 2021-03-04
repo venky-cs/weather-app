@@ -28,3 +28,17 @@
 .side .top > button{
   padding:10px 20px;
 }
+
+.detail .top{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.detail .top .card{
+  margin: 30px auto;
+  color: white;
+  background-color: #1e213a;
+}
+p >span{
+  padding-left:10px;
+}
