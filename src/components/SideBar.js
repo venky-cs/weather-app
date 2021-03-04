@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import background from "./Cloud-background.png";
 
 function SideBar({ result, datas }) {
   const [search, setSearch] = useState(true);
@@ -41,17 +42,24 @@ function SideBar({ result, datas }) {
               </button>
             </div>
             {day && day.length > 1 && (
-              <div>
-                <img
-                  src={`/icons/${setWeatherImg()}.png`}
-                  alt={day[0].weather_state_name}
-                />
-                <h3>
-                  <sup>{Math.floor(day[0].the_temp)} </sup> .C{" "}
-                </h3>
-                <h5>{day[0].weather_state_name}</h5>
-                <p>Today .{formatDate(day[0].applicable_date)}</p>
-                <p>{info.title}</p>
+              <div
+                className="content"
+                style={{
+                  backgroundImage: `url(${background})`,
+                }}
+              >
+                <div className="content-main">
+                  <img
+                    src={`/icons/${setWeatherImg()}.png`}
+                    alt={day[0].weather_state_name}
+                  />
+                  <h3>
+                    <sup>{Math.floor(day[0].the_temp)} </sup> .C{" "}
+                  </h3>
+                  <h5>{day[0].weather_state_name}</h5>
+                  <p>Today .{formatDate(day[0].applicable_date)}</p>
+                  <p>{info.title}</p>
+                </div>
               </div>
             )}
           </>

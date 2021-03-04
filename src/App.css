@@ -56,3 +56,24 @@ p > span {
   background: #1e213a;
   color: white;
 }
+
+.content {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.content .content-main {
+  background: #1e213ad4;
+  color: #fff;
+}
+
+.content .content-main img {
+  width: 202px;
+  height: 200px;
+  margin: 30px 25%;
+}
+img {
+  width: 56.44px;
+  height: 62px;
+}
