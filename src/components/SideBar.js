@@ -37,7 +37,7 @@ function SideBar({ result, datas }) {
               <button onClick={() => setSearch((prevState) => !prevState)}>
                 Search for places
               </button>
-              <button>
+              <button className="btn-logo">
                 <span class="material-icons">gps_fixed</span>
               </button>
             </div>

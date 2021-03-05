@@ -40,8 +40,8 @@ function DetailBar({ datas }) {
                     alt={data.weather_state_name}
                   />
                   <p>
-                    <span>{Math.floor(data.max_temp)}</span>
-                    <span>{Math.floor(data.min_temp)}</span>
+                    <span>{Math.floor(data.max_temp)}.C</span>
+                    <span>{Math.floor(data.min_temp)}.C</span>
                   </p>
                 </div>
               );

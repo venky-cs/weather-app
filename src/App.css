@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -21,6 +21,7 @@
 .detail {
   flex: 0.75;
   background-color: #100e1d;
+  padding:50px 80px;
 }
 
 .side .top {
@@ -35,6 +36,14 @@
   font-weight: 500;
   font-size: 16px;
   padding: 10px 15px;
+  color: #e7e7eb;
+  background-color: #6e707a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+.btn-logo {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
 }
 
 .detail .top {
@@ -46,9 +55,16 @@
   margin: 30px auto;
   color: white;
   background-color: #1e213a;
+  padding: 20px 30px;
 }
 p > span {
   padding-left: 10px;
+}
+.detail .top .card p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #e7e7eb;
 }
 
 .detail .middle .card .row {
@@ -57,12 +73,25 @@ p > span {
   padding-bottom: 20px;
 }
 .detail .middle h3 {
-  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #e7e7eb;
+  padding: 20px 30px;
 }
-.middle .card .row > div {
+.middle .card .row div {
   width: 328px;
   background: #1e213a;
-  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #e7e7eb;
+  text-align: center;
+  padding: 50px 30px;
+  margin: 50px auto;
+}
+.middle .card .row h4{
+  font-size: 36px;
 }
 
 .content {
@@ -82,19 +111,23 @@ p > span {
   font-size: 100px;
   color: #fff;
 }
-.content .content-main h3,.content .content-main h5{
+.content .content-main h3,
+.content .content-main h5 {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 36px;
   color: #a09fb1;
-  padding:40px;
+  padding: 40px;
 }
-.content .content-main p{
-   font-family: "Raleway", sans-serif;
+.content .content-main p {
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 18px;
   color: #88869d;
   padding: 20px 40px;
+}
+.content .content-main p span:last-child{
+  color: #a09fb1;
 }
 
 .content .content-main img {
@@ -103,6 +136,8 @@ p > span {
   margin: 40px;
 }
 img {
+  display: inline-block;
   width: 56.44px;
   height: 62px;
+  margin: 10px;
 }
