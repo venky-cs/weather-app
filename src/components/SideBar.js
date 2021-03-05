@@ -58,14 +58,20 @@ function SideBar({ result, datas }) {
                   </h3>
                   <h5>{day[0].weather_state_name}</h5>
                   <p>Today .{formatDate(day[0].applicable_date)}</p>
-                  <p>{info.title}</p>
+                  <p>
+                    <span class="material-icons">place</span>
+                    {info.title}
+                  </p>
                 </div>
               </div>
             )}
           </>
         ) : (
-          <div className="searchbar">
-            <button onClick={() => setSearch((prevState) => !prevState)}>
+          <div className={search ? null : "searchbar"}>
+            <button
+              className="close"
+              onClick={() => setSearch((prevState) => !prevState)}
+            >
               X
             </button>
             <div className="top">
@@ -73,21 +79,25 @@ function SideBar({ result, datas }) {
                 type="text"
                 onChange={(e) => setValue(e.target.value)}
                 placeholder="search location"
-              />
-              <button
-                onClick={() => {
-                  setLocation(value);
-                  setSearch((prevState) => !prevState);
+                onKeyPress={(event) => {
+                  if (event.key === "Enter") {
+                    updateValue()
+                  }
                 }}
-              >
-                Search
-              </button>
+                autoFocus
+              />
+              <button onClick={updateValue}>Search</button>
             </div>
           </div>
         )}
       </div>
     </div>
   );
+
+  function updateValue(){
+    setLocation(value);
+    setSearch((prevState) => !prevState);
+  }
 }
 
 export default SideBar;

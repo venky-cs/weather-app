@@ -57,14 +57,17 @@ function DetailBar({ datas }) {
                   <h4>
                     <b>{Math.floor(day[0].wind_speed)}</b>mph
                   </h4>
-                  <p>{day[0].wind_direction_compass}</p>
+                  <p>
+                    <span id="near" class="material-icons">near_me</span>
+                    {day[0].wind_direction_compass}
+                  </p>
                 </div>
                 <div>
                   <p>Humidity</p>
                   <h4>
                     <b>{day[0].humidity}</b>%
                   </h4>
-                  <progress></progress>
+                  <progress max="100" value={day[0].humidity}></progress>
                 </div>
               </div>
               <div className="row">
