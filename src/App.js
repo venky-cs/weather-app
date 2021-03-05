@@ -6,6 +6,9 @@ function App() {
   return (
     <div className="App">
       <Main />
+      <footer>
+        <p>created by venky -devchallenges.io</p>
+      </footer>
     </div>
   );
 }
