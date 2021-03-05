@@ -6,10 +6,8 @@
   box-sizing: border-box;
 }
 
-body {
-  /* font-family: 'Montserrat', sans-serif; */
-  font-family: "Raleway", sans-serif;
-}
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: "Raleway", sans-serif; */
 
 .main {
   display: flex;
@@ -33,7 +31,10 @@ body {
 }
 
 .side .top > button {
-  padding: 10px 20px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 15px;
 }
 
 .detail .top {
@@ -66,7 +67,7 @@ p > span {
 
 .content {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   width: 100%;
 }
 
@@ -75,11 +76,31 @@ p > span {
   color: #fff;
   text-align: center;
 }
+.content .content-main h3 sup {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 100px;
+  color: #fff;
+}
+.content .content-main h3,.content .content-main h5{
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #a09fb1;
+  padding:40px;
+}
+.content .content-main p{
+   font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #88869d;
+  padding: 20px 40px;
+}
 
 .content .content-main img {
   width: 202px;
   height: 200px;
-  margin: 30px 25%;
+  margin: 40px;
 }
 img {
   width: 56.44px;
