@@ -10,7 +10,6 @@
 .App{
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 .main {
   display: flex;
@@ -151,7 +150,7 @@ footer p {
   font-weight: 500;
   font-size: 16px;
   position: relative;
-  bottom: 40px;
+  bottom: 35px;
   text-align: center;
   color: #a09fb1;
 }
@@ -249,10 +248,34 @@ footer p {
 .content .content-main h5{
   padding: 10px;
 }
+.searchbar{
+  padding-top: 10px;
+}
+.middle .card .row h4{
+  font-size:26px;
+}
 }
 
 @media only screen and (max-width: 600px) {
-  .main{
+  .main,.detail .top,.detail .middle .card .row{
     display: block;
   }
+  .detail .top{
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
+ .detail .middle h3{
+  font-size:16px;
+  font-weight:bold;
+  padding:25px;
+}
+.middle .card .row div {
+  width:auto;
+  padding:25px;
+}
+.searchbar{
+  height: 100vh;
+}
+
 }
