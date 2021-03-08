@@ -278,6 +278,6 @@ footer p {
   height: 100vh;
 }
  footer p{
-   display:block;
+   position:static
   }
 }
