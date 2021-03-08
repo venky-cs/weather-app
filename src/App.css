@@ -277,5 +277,6 @@ footer p {
 .searchbar{
   height: 100vh;
 }
-
+ footer p{
+   display:none;
 }
