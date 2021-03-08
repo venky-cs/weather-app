@@ -13,8 +13,8 @@
 }
 .main {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 .side {
   flex: 0.25;
@@ -149,8 +149,8 @@ footer p {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  position: relative;
-  bottom: 35px;
+  position: absolute;
+  bottom: 0;
   text-align: center;
   color: #a09fb1;
 }
@@ -278,6 +278,7 @@ footer p {
   height: 100vh;
 }
  footer p{
-   position:static
+   position: relative;
+  bottom:30px;
   }
 }
