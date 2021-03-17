@@ -148,6 +148,7 @@ footer p {
   font-size: 16px;
   position: absolute;
   bottom: 0;
+  width: 100%;
   text-align: center;
   color: #a09fb1;
 }
@@ -162,20 +163,20 @@ footer p {
 
 .searchbar {
   position: relative;
-  right: -600px;
+  right: 100px;
   -webkit-animation: slide 0.5s forwards;
   -webkit-animation-delay: 2s;
   animation: slide 0.5s forwards;
 }
 @-webkit-keyframes slide {
   100% {
-    left: 0;
+    right: 0;
   }
 }
 
 @keyframes slide {
   100% {
-    left: 0;
+    right: 0;
   }
 }
 
@@ -217,7 +218,7 @@ footer p {
   color: #e7e7eb;
 }
 
-@media only screen and (max-width:1400px){
+@media only screen and (max-width:1300px){
   .side .top {
   margin-top: 10px;
   padding: 15px;
@@ -251,6 +252,10 @@ footer p {
 .middle .card .row h4{
   font-size:26px;
 }
+footer p{
+  position: relative;
+  bottom:0;
+}
 }
 
 @media only screen and (max-width: 600px) {
@@ -275,7 +280,7 @@ footer p {
   height: 100vh;
 }
  footer p{
-   position: relative;
+  position: relative;
   bottom:30px;
   }
 }
