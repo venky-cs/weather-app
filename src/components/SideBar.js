@@ -55,9 +55,7 @@ function SideBar({ result, datas ,select,getwoeid}) {
               </button>
               <button class="btn-logo">
                 {/* <span className=" material-icons" onClick={getGeolocation}> */}
-                <span className=" material-icons">
-                  gps_fixed
-                </span>
+                <span className=" material-icons">gps_fixed</span>
               </button>
             </div>
             {day && day.length > 1 && (
@@ -94,31 +92,38 @@ function SideBar({ result, datas ,select,getwoeid}) {
               X
             </button>
             <div>
-
-            <div className="top">
-              <input
-                type="text"
-                onChange={(e) => {
-                  setValue(e.target.value)
-                  setLocation(value)
-                }}
-                placeholder="search location"
-                onKeyPress={(event) => {
-                  if (event.key === 'Enter') {
-                    updateValue();
-                  }
-                }}
-                autoFocus
+              <div className="top">
+                <input
+                  type="text"
+                  onChange={(e) => {
+                    setValue(e.target.value);
+                    setLocation(value);
+                  }}
+                  placeholder="search location"
+                  onKeyPress={(event) => {
+                    if (event.key === 'Enter') {
+                      updateValue();
+                    }
+                  }}
+                  autoFocus
                 />
-              <button onClick={updateValue}>Search</button>
-            </div>
+                <button onClick={updateValue}>Search</button>
+              </div>
 
-              {select && select.map((choose,i) => <div className="select">
-                <li onClick={() => {
-                  setWoeid(choose.woeid)
-                  setSearch((prevState) => !prevState);
-                  }} key={i}>{choose.title}</li>
-              </div>)}
+              <div className="select">
+                {select &&
+                  select.map((choose, i) => (
+                    <li
+                      onClick={() => {
+                        setWoeid(choose.woeid);
+                        setSearch((prevState) => !prevState);
+                      }}
+                      key={i}
+                    >
+                      {choose.title}
+                    </li>
+                  ))}
+              </div>
             </div>
           </div>
         )}
