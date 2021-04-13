@@ -3,12 +3,12 @@ import background from './Cloud-background.png';
 // import useGeolocation from './useGeolocation';
 // import GeoSearch from './GeoSearch'
 
-function SideBar({ result, datas ,select,getwoeid}) {
+function SideBar({ result, datas, select, getwoeid }) {
   const [search, setSearch] = useState(true);
   const [value, setValue] = useState('');
   const [location, setLocation] = useState('');
 
-  const[woeid,setWoeid] =useState(0)
+  const [woeid, setWoeid] = useState(0);
 
   // const currentLocation = useGeolocation();
   // const [geo, setGeo] = useState('');

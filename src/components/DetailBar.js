@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 function DetailBar({ datas }) {
   const [info, setInfo] = useState([]);
   var todayDate = new Date().toISOString().slice(0, 10);
-  console.log(todayDate);
+  // console.log(todayDate);
   let day = datas.consolidated_weather;
 
   useEffect(() => {
     if (day) {
       let dayFilt = day.filter((data) => data.applicable_date !== todayDate);
       setInfo(dayFilt);
-    } else console.log("no data");
+    } else console.log('no data');
   }, [day]);
 
   console.log(info);
 
   const setWeatherImg = () => {
-    const weatherName = day[0].weather_state_name.replace(/ +/g, "");
+    const weatherName = day[0].weather_state_name.replace(/ +/g, '');
     return weatherName;
   };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    const splitDate = date.toString().split(" ");
+    const splitDate = date.toString().split(' ');
     return `${splitDate[0]}, ${splitDate[2]} ${splitDate[1]}`;
   };
 
@@ -58,7 +58,9 @@ function DetailBar({ datas }) {
                     <b>{Math.floor(day[0].wind_speed)}</b>mph
                   </h4>
                   <p>
-                    <span id="near" class="material-icons">near_me</span>
+                    <span id="near" class="material-icons">
+                      near_me
+                    </span>
                     {day[0].wind_direction_compass}
                   </p>
                 </div>
